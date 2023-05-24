@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Journey</title>
+</head>
+<body>
+    <h1>Шукаю попутника</h1>
+
+
+    {% for post in posts %}
+    <br>
+    {{post.autor}}
+    <br>
+    {{post.age}}
+    <br>
+    {{post.title}}
+    <br>
+    {{post.place}}
+    <br>
+    {{post.descriptions}}
+    <br>
+    {{post.phone}}
+    <br>
+    {{post.mail}}
+    <br>
+    {{post.date}}
+    {% endfor %}
+</body>
+</html>
