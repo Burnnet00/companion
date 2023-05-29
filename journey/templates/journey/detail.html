@@ -14,7 +14,9 @@
 
 
 <div class="image">
-    <img src="{{ post.image.url }}" width="200px"/>
+    <p align="center">
+        <img src="{{ post.image.url }}" width="400px"/>
+    </p>
 </div>
 <div>
 <br>
@@ -30,5 +32,32 @@
 Емайл: {{post.mail}}
 <br>
 {{post.date}}
+<br>
+			</div>
+			<div class="form-comment">
+				<h3>Залишити коментар</h3>
+				<div>
+					<form action="{% url 'add_comments' post.id %}" method="post">
+						{% csrf_token %}
+						<div>
+							<label>Ваш коментар</label>
+							<textarea name="text_comments" id="" cols="30" rows="10"></textarea><! -- id="" cols="30" rows="10" -->
+						</div>
+						<div>
+							<label>Ваше імя</label>
+							<input type="text" name="name">
+						</div>
+						<div>
+							<label>Ваш емайл</label>
+							<input type="email" name="email">
+						</div>
+						<div>
+							<input type="submit">
+						</div>
+
+					</form>
+				</div>
+
+			</div>
 
 {% endblock %}

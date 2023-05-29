@@ -3,7 +3,7 @@ from django.views.generic.base import View
 from .models import Post, Comments
 from rest_framework import routers
 from .api import PostViewset
-from .form import PostForm
+from .form import PostForm, CommentsForm
 
 
 class PostView(View):
@@ -22,6 +22,15 @@ class PostViewDetail(View):
         post = Post.objects.get(id=pk)
         return render(request, 'journey/detail.html', {'post': post})
 
+class AddComment(View):
+    '''add comments'''
+    def post(self, request, pk):
+        form = CommentsForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.post_id = pk
+            form.save()
+        return redirect(f'/{pk}/')#del last /
 
 
 
@@ -30,15 +39,3 @@ class PostViewDetail(View):
 
 
 
-
-
-
-# class AddComments(View):
-#     '''add comments'''
-#     def post(self, request, pk):
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form = form.save(commit=False)
-#             form.post_id = pk
-#             form.save()
-#         return redirect(f'/{pk}')
