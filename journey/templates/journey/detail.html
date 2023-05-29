@@ -59,5 +59,18 @@
 				</div>
 
 			</div>
+			<div>
+				{% for comment in post.comments_set.all %}
+				<div class="view-comment">
+					 <h4>{{ comment.name }}</h4>
+					<p>
+						{{ comment.text_comments }}
+					</p>
+					<div> <span class="contact" ></span> <a class="color" e href="mailto:{{ comment.email }}">{{ comment.email }}</a> </div>
+
+
+				</div>
+				{% endfor %}
+			</div>
 
 {% endblock %}
