@@ -30,7 +30,7 @@ class AddComment(View):
             form = form.save(commit=False)
             form.post_id = pk
             form.save()
-        return redirect(f'/{pk}/')#del last /
+        return redirect(f'/{pk}')
 
 
 
