@@ -1,12 +1,12 @@
 {% extends 'journey/base.html' %}
 {% load static %}
 
+
 {% block content %}
 
-<h1>Шукаю попутника</h1>
 
-{% for post in posts %}
 
+<h3>Hellow</h3>
 <div>
     <h2>{{post.autor}}  {{post.age}}</h2>
 </div>
@@ -14,7 +14,7 @@
 
 
 <div class="image">
-    <img src="{{ post.image }}" width="200px"/>
+    <img src="{{ post.image.url }}" width="200px"/>
 </div>
 <div>
 <br>
@@ -31,5 +31,4 @@
 <br>
 {{post.date}}
 
-{% endfor %}
 {% endblock %}

@@ -99,8 +99,8 @@ class Comments(models.Model):
         return f'{self.name}, {self.post}'
 
     class Meta:
-        verbose_name = 'Коментарій'
-        verbose_name_plural = 'Коментарії'
+        verbose_name = 'Коментар'
+        verbose_name_plural = 'Коментарі'
 
 
 

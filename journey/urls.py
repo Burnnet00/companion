@@ -4,7 +4,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.PostView.as_view()),
+    path('', views.PostView.as_view()),#, name='main'),
+    path('<int:pk>/', views.PostViewDetail.as_view())#, name='detail'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

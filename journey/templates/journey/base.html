@@ -1,10 +1,20 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<div id="navigation">
+			<ul>
+			    <li><a href="/" class="active">Головна</a></li>
+			    <li><a href="/admin/">Адмін панель</a></li>
 
+			</ul>
+</div>
+
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
