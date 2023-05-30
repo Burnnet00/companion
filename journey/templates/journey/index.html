@@ -6,29 +6,32 @@
 <h1>Шукаю попутника</h1>
 
 {% for post in posts %}
-
 <div>
-    <h2><span>{{post.autor}} {{post.age}}</span></h2>
-</div>
 
-<div class="image">
-    <img src="{{ post.image }}" width="200px"/>
-</div>
-<div>
-Міце зустрічі: {{post.place}}
-</div>
+    <div>
+        <div>
+            <h2><span><a href="{{ post.id }}">{{ post.title }}</a> {{post.autor}} {{post.age}}</span></h2>
+        </div>
 
-<div>
-    <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
-</div>
-<br>
-{{post.description}}
-<!--<br>-->
-<!--Тел: {{post.phone}}-->
-<!--<br>-->
-<!--Емайл: {{post.mail}}-->
-<br>
-{{post.date}}
+        <div class="image">
+            <span>
+                <img src="{{ post.image }}" width="200px"/>  {{post.description}}
+            </span>
+        </div>
+        <div>
+            <h4>Міце зустрічі: {{post.place}}</h4>
+        </div>
+    </div>
 
+    <div>
+        <div>
+            {{post.date}}
+        </div>
+        <!--<br>-->
+        <!--Тел: {{post.phone}}-->
+        <!--<br>-->
+        <!--Емайл: {{post.mail}}-->
+    </div>
+</div>
 {% endfor %}
 {% endblock %}

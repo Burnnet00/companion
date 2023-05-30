@@ -3,82 +3,90 @@
 
 
 {% block content %}
+<!--main container-->
+<div>
+    <aside>
 
+
+
+    </aside>
+</div>
+
+
+<!--post container-->
+<div>
+    <div class="image">
+        <p align="center">
+            <img src="{{ post.image.url }}" width="300px"/>
+        </p>
+    </div>
+
+    <div align="center">
+        <span>{{post.title}}  {{post.autor}}  {{post.age}}</span>
+    </div>
+
+    <div align="center">
+        <br>
+        Міце зустрічі: {{post.place}}
+    </div>
+
+    <div>
+        <br>
+        {{post.description}}
+    </div>
+
+    <div>
+        <br>
+        Тел: {{post.phone}}
+        <br>
+        Емайл: {{post.mail}}
+    </div>
+    <div>
+        <br>
+        {{post.date}}
+        <br>
+    </div>
+</div>
+
+<div class="form-comment">
+    <h3>Залишити коментар</h3>
+    <div>
+        <form action="{% url 'add_comments' post.id %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label>Ваш коментар</label>
+                <textarea name="text_comments" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <label>Ваше імя</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label>Ваш емайл</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+
+        </form>
+    </div>
+
+</div>
 
 <div>
-	<h3>Hellow</h3> <span>{{post.autor}}  {{post.age}}</span>
+    {% for comment in post.comments_set.all %}
+    <div class="view-comment">
+        <h4>{{ comment.name }}</h4>
+        <p>
+            {{ comment.text_comments }}
+        </p>
+        <div><span class="contact"></span> <a class="color" e href="mailto:{{ comment.email }}">{{ comment.email }}</a>
+        </div>
+
+
+    </div>
+    {% endfor %}
 </div>
-
-
-
-<div class="image">
-    <p align="center">
-        <img src="{{ post.image.url }}" width="300px"/>
-    </p>
-</div>
-<div>
-<br>
-    {{post.title}}
-</div>
-<div>
-	<br>
-	Міце зустрічі: {{post.place}}
-</div>
-
-<div>
-	<br>
-	{{post.description}}
-</div>
-
-<div>
-	<br>
-	Тел: {{post.phone}}
-	<br>
-	Емайл: {{post.mail}}
-</div>
-<div>
-	<br>
-	{{post.date}}
-	<br>
-</div>
-			</div>
-			<div class="form-comment">
-				<h3>Залишити коментар</h3>
-				<div>
-					<form action="{% url 'add_comments' post.id %}" method="post">
-						{% csrf_token %}
-						<div>
-							<label>Ваш коментар</label>
-							<textarea name="text_comments" id="" cols="30" rows="10"></textarea><! -- id="" cols="30" rows="10" -->
-						</div>
-						<div>
-							<label>Ваше імя</label>
-							<input type="text" name="name">
-						</div>
-						<div>
-							<label>Ваш емайл</label>
-							<input type="email" name="email">
-						</div>
-						<div>
-							<input type="submit">
-						</div>
-
-					</form>
-				</div>
-
-			</div>
-			<div>
-				{% for comment in post.comments_set.all %}
-				<div class="view-comment">
-					 <h4>{{ comment.name }}</h4>
-					<p>
-						{{ comment.text_comments }}
-					</p>
-					<div> <span class="contact" ></span> <a class="color" e href="mailto:{{ comment.email }}">{{ comment.email }}</a> </div>
-
-
-				</div>
-				{% endfor %}
-			</div>
 
 {% endblock %}

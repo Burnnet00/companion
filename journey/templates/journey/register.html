@@ -1,0 +1,61 @@
+{% extends 'journey/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="form-register">
+    <h3>Залишити коментар</h3>
+    <div>
+        <form action="{% url 'add_comments' post.id %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label>Ваше імя</label>
+                <input type="text" name="autor">
+            </div>
+            <div>
+                <label>Ваш вік</label>
+                <input type="text" name="age">
+            </div>
+            <div>
+                <label>Ваше імя M | F </label>
+                <input type="text" name="sex">
+            </div>
+            <div>
+                <label>Ваше фото</label>
+                <input type="text" name="image">
+            </div>
+            <div>
+                <label>Заголовок</label>
+                <input type="text" name="title">
+            </div>
+            <div>
+                <label>Місце подорожі</label>
+                <input type="text" name="place">
+            </div>
+            <div>
+                <label>Опис</label>
+                <textarea name="description" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <label>Ваш телефон</label>
+                <input type="text" name="phone">
+            </div>
+            <div>
+                <label>Ваш емайл</label>
+                <input type="email" name="mail">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+
+{% endblock%}
