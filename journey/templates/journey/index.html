@@ -8,26 +8,25 @@
 {% for post in posts %}
 
 <div>
-    <h2>{{post.autor}}  {{post.age}}</h2>
+    <h2><span>{{post.autor}} {{post.age}}</span></h2>
 </div>
-
-
 
 <div class="image">
     <img src="{{ post.image }}" width="200px"/>
 </div>
-<br>
+<div>
+Міце зустрічі: {{post.place}}
+</div>
+
 <div>
     <h4><a href="{{ post.id }}">{{ post.title }}</a></h4>
 </div>
 <br>
-Міце зустрічі: {{post.place}}
-<br>
-{{post.descriptions}}
-<br>
-Тел: {{post.phone}}
-<br>
-Емайл: {{post.mail}}
+{{post.description}}
+<!--<br>-->
+<!--Тел: {{post.phone}}-->
+<!--<br>-->
+<!--Емайл: {{post.mail}}-->
 <br>
 {{post.date}}
 

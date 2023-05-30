@@ -5,34 +5,42 @@
 {% block content %}
 
 
-
-<h3>Hellow</h3>
 <div>
-    <h2>{{post.autor}}  {{post.age}}</h2>
+	<h3>Hellow</h3> <span>{{post.autor}}  {{post.age}}</span>
 </div>
 
 
 
 <div class="image">
     <p align="center">
-        <img src="{{ post.image.url }}" width="400px"/>
+        <img src="{{ post.image.url }}" width="300px"/>
     </p>
 </div>
 <div>
 <br>
     {{post.title}}
 </div>
-<br>
-Міце зустрічі: {{post.place}}
-<br>
-{{post.descriptions}}
-<br>
-Тел: {{post.phone}}
-<br>
-Емайл: {{post.mail}}
-<br>
-{{post.date}}
-<br>
+<div>
+	<br>
+	Міце зустрічі: {{post.place}}
+</div>
+
+<div>
+	<br>
+	{{post.description}}
+</div>
+
+<div>
+	<br>
+	Тел: {{post.phone}}
+	<br>
+	Емайл: {{post.mail}}
+</div>
+<div>
+	<br>
+	{{post.date}}
+	<br>
+</div>
 			</div>
 			<div class="form-comment">
 				<h3>Залишити коментар</h3>
