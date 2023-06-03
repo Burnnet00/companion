@@ -3,6 +3,10 @@ from .models import Post, Comments
 from django import forms
 from .models import GENDER_CHOICES, COUNTRY_CHOICES
 
+class CommentsForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = ('text_comments', 'name', 'email',)
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -10,55 +14,45 @@ class PostForm(forms.ModelForm):
         fields = ('autor', 'age', 'sex', 'image', 'title',
                   'place', 'description', 'phone', 'mail',)
 
-        # widgets = {
-        #     'autor': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Автор'
-        #     }),
-        #     'age': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Вік'
-        #     }),
-        #     'sex': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Стать'
-        #     }),
-        #     'image': ImageField(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Світлина'
-        #     }),
-        #     'title': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Заголовок'
-        #     }),
-        #     'place': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Місце зустрічі'
-        #     }),
-        #     'description': Textarea(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Опис'
-        #     }),
-        #     'phone': TextInput(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Телефон'
-        #     }),
-        #     'mail': EmailField(attrs={
-        #         'class': 'form-control',
-        #         'placeholder': 'Емайл'
-        #     }),
-        #
-        # }
+        widgets = {
+            'autor': TextInput(attrs={
 
+                'placeholder': 'Автор',
+            }),
+            'age': TextInput(attrs={
 
-class CommentsForm(forms.ModelForm):
-    class Meta:
-        model = Comments
-        fields = ('text_comments', 'name', 'email',)
+                'placeholder': 'Вік',
+            }),
+            # 'sex': TextInput(attrs={
+            #
+            #     'placeholder': 'Стать',
+            # }),
+            # 'image': ImageField(attrs={
+            #
+            #     'placeholder': 'Світлина',
+            # }),
+            'title': TextInput(attrs={
 
+                'placeholder': 'Заголовок',
+            }),
+            # 'place': TextInput(attrs={
+            #
+            #     'placeholder': 'Місце зустрічі',
+            # }),
+            'description': Textarea(attrs={
 
+                'placeholder': 'Опис',
+            }),
+            'phone': TextInput(attrs={
 
+                'placeholder': 'Телефон',
+            }),
+            # 'mail': EmailField(attrs={
+            #
+            #     'placeholder': 'Емайл',
+            # }),
 
+        }
 
 
 # class AddPostForm(forms.Form):

@@ -41,7 +41,7 @@ def add_post(request):
             form.save()
             return redirect ('main')
         else:
-            error = 'Неврна форма'
+            error = 'Невірна форма'
 
     form = PostForm
     data = {
@@ -50,22 +50,7 @@ def add_post(request):
     }
     return render(request, 'journey/addpost.html', data)
 
-#
-# def add_post(request):
-#     if request.method == 'POST':
-#         form = AddPostForm(request.POST)
-#         if form.is_valid():
-#             try:
-#                 Post.objects.create(**form.cleaned_data)
-#                 return redirect('')
-#             except:
-#                 form.add_error('Error')
-#     else:
-#         form = AddPostForm( )
-#     return render(request, 'journey/addpost.html', {'form': form})
-#
-#
-#
+
 # class AddPost(View):
 #     def get(self,request):
 #         if request.POST:
