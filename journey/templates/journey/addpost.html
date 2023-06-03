@@ -1,0 +1,71 @@
+{% extends 'journey/base.html' %}
+
+
+
+{% block content %}
+<h1>Hello {{ autor }}</h1>
+
+<div class="form-register">
+    <h3>Залишити повідомлення</h3>
+<form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.ful_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+          <button class="btn btn-success" type="submit">Готово</button>
+</form>
+
+</div>
+
+
+<!--    <div>-->
+<!--        <form action="{% url 'addpost' %}" method="post">-->
+<!--            {% csrf_token %}-->
+<!--&lt;!&ndash;            {{ form.as_p }}&ndash;&gt;-->
+<!--            <div>-->
+<!--                <label>Ваше імя</label>-->
+<!--                <input type="text" name="autor">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Ваш вік</label>-->
+<!--                <input type="text" name="age">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Ваше імя M | F </label>-->
+<!--                <input type="text" name="sex">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Ваше фото</label>-->
+<!--                <input type="text" name="image">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Заголовок</label>-->
+<!--                <input type="text" name="title">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Місце подорожі</label>-->
+<!--                <input type="text" name="place">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Опис</label>-->
+<!--                <textarea name="description" cols="30" rows="10"></textarea>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Ваш телефон</label>-->
+<!--                <input type="text" name="phone">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label>Ваш емайл</label>-->
+<!--                <input type="email" name="mail">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <input type="submit">-->
+<!--            </div>-->
+
+<!--        </form>-->
+<!--    </div>-->
+
+
+{% endblock%}

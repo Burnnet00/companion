@@ -16,8 +16,16 @@ body   {
 .wrapper {
     background-color: #ffffff;
     display: flex;
-    max-width: 320px;
+    max-width: 100%
     box-shadow: 5px 9px 20px rgba(0, 0, 0, 0.15);
+
+.sidebar  {
+    background-color: #1e2939;   /*#E0EBFE;*/
+    width: 370px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: auto;
+    }
 
 .hashtag{
     font-size: 12px;

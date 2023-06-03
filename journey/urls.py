@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.PostView.as_view()),#, name='main'),
     path('<int:pk>', views.PostViewDetail.as_view()),#, name='detail'),
     path('review/<int:pk>/', views.AddComment.as_view(), name='add_comments'),
-    path('add/', views.AddPost.as_view())#, name='add_post'),
+    path('addpost/', views.add_post, name='addpost'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

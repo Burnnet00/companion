@@ -37,13 +37,32 @@ class AddPost(View):
         posts = Post.objects.all()
         return render(request, 'journey/thx.html', {'posts': posts})
 
+def add_post(request):
+    # autor = request.GET('autor')
+    return render(request, 'journey/addpost.html')#, {'autor': autor})
 
-        # pform = PostForm(request.POST)
-        # pform.save(commit=False)
+# class Reg(View):
+#
+#     def get(self, request):
+#
+#         return render(request, 'journey/addpost.html')
 
-
-
-
+#
+# def add_post(request):
+#     if request.method == 'POST':
+#         form = AddPostForm(request.POST)
+#         if form.is_valid():
+#             try:
+#                 Post.objects.create(**form.cleaned_data)
+#                 return redirect('')
+#             except:
+#                 form.add_error('Error')
+#     else:
+#         form = AddPostForm( )
+#     return render(request, 'journey/addpost.html', {'form': form})
+#
+#
+#
 # class AddPost(View):
 #     def get(self,request):
 #         if request.POST:
@@ -72,4 +91,4 @@ class AddPost(View):
 #             return render(request, 'thx.html)
 #         else:
 #             print('Спробуйте ще')
-#             return render(request, 'register.html')
+#             return render(request, 'addpost.html')
