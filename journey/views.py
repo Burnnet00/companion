@@ -32,20 +32,23 @@ class AddComment(View):
             form.save()
         return redirect(f'/{pk}')
 
-class AddPost(View):
-    def posts(self, request):
-        posts = Post.objects.all()
-        return render(request, 'journey/thx.html', {'posts': posts})
 
 def add_post(request):
-    # autor = request.GET('autor')
-    return render(request, 'journey/addpost.html')#, {'autor': autor})
+    error = ''
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect ('main')
+        else:
+            error = 'Неврна форма'
 
-# class Reg(View):
-#
-#     def get(self, request):
-#
-#         return render(request, 'journey/addpost.html')
+    form = PostForm
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'journey/addpost.html', data)
 
 #
 # def add_post(request):
