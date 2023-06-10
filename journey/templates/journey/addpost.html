@@ -9,7 +9,7 @@
 <div class="form-register">
     <h3>Залишити повідомлення</h3>
 
-<form action="{% url 'addpost' %}" method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <span>{{ error }}</span>

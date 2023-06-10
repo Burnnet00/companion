@@ -41,7 +41,6 @@ COUNTRY_CHOICES = (
     ('PL', 'Польща'),
     ('PT', 'Португалія'),
     ('RO', 'Румунія'),
-    # ('RU', 'Росія'),
     ('SG', 'Сінгапур'),
     ('SK', 'Словаччина'),
     ('SI', 'Словенія'),
@@ -63,6 +62,7 @@ COUNTRY_CHOICES = (
     ('JP', 'Японія'),
     ('PY', 'Парагвай'),
     ('PE', 'Перу'),
+    # ('RU', 'Росія'),
     # ('--', 'Свій варіант'),
 
 )
@@ -70,16 +70,16 @@ COUNTRY_CHOICES = (
 
 class Post(models.Model):
     """Post"""
-    autor = models.CharField('Автор: ', max_length=50)
-    age = models.CharField('Вік: ', max_length=2)
-    sex = models.CharField('Стать:', max_length=1, choices=GENDER_CHOICES)
-    image = models.ImageField('Світлина: ', upload_to='image/%Y')#, blank=True, null=True)
-    title = models.CharField('Заголовок: ', max_length=150)
-    place = models.CharField('Місце подорожі: ', max_length=150, choices=COUNTRY_CHOICES, blank=True, null=True)
-    description = models.TextField('Опис: ', max_length=2000)
-    phone = models.CharField('Тел: ', max_length=20, validators=[validate_integer])
-    mail = models.EmailField('Емайл:', max_length=20, validators=[validate_email])
-    date = models.DateTimeField('Дата публікації:', auto_now_add=True)
+    autor = models.CharField('Автор ', max_length=50)
+    age = models.CharField('Вік ', max_length=2)
+    sex = models.CharField('Стать ', max_length=1, choices=GENDER_CHOICES)
+    image = models.ImageField('Світлина ', upload_to='image/%Y', blank=True, null=True)
+    title = models.CharField('Заголовок ', max_length=150)
+    place = models.CharField('Місце подорожі ', max_length=150, choices=COUNTRY_CHOICES, blank=True, null=True)
+    description = models.TextField('Опис ', max_length=2000)
+    phone = models.CharField('Тел ', max_length=20, validators=[validate_integer])
+    mail = models.EmailField('Емайл ', max_length=20, validators=[validate_email])
+    date = models.DateTimeField('Дата публікації ', auto_now_add=True)
 
     def __str__(self):
         return f'{self.autor}, {self.title}, {self.place},'
