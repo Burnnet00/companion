@@ -2,57 +2,93 @@ from django.forms import TextInput, ImageField, Textarea, EmailField
 from .models import Post, Comments
 from django import forms
 from .models import GENDER_CHOICES, COUNTRY_CHOICES
+from django.core.exceptions import ValidationError
+
+
 
 class CommentsForm(forms.ModelForm):
     class Meta:
         model = Comments
         fields = ('text_comments', 'name', 'email',)
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('autor', 'age', 'sex', 'image', 'title',
                   'place', 'description', 'phone', 'mail',)
-
         widgets = {
-            'autor': TextInput(attrs={
-
+            'autor': forms.TextInput(attrs={
                 'placeholder': 'Автор',
             }),
-            'age': TextInput(attrs={
-
+            'age': forms.TextInput(attrs={
                 'placeholder': 'Вік',
             }),
-            # 'sex': TextInput(attrs={
-            #
-            #     'placeholder': 'Стать',
-            # }),
-            # 'image': ImageField(attrs={
-            #
-            #     'placeholder': 'Світлина',
-            # }),
-            'title': TextInput(attrs={
-
+            'image': forms.ClearableFileInput(attrs={
+                'placeholder': 'Світлина',
+            }),
+            'title': forms.TextInput(attrs={
                 'placeholder': 'Заголовок',
             }),
-            # 'place': TextInput(attrs={
-            #
-            #     'placeholder': 'Місце зустрічі',
-            # }),
-            'description': Textarea(attrs={
-
+            'description': forms.Textarea(attrs={
                 'placeholder': 'Опис',
             }),
-            'phone': TextInput(attrs={
-
+            'phone': forms.TextInput(attrs={
                 'placeholder': 'Телефон',
             }),
-            'mail': TextInput(attrs={
-
+            'mail': forms.TextInput(attrs={
                 'placeholder': 'Емайл',
             }),
-
         }
+
+#     def clean_image(self):
+#         image = self.cleaned_data.get('image', False)
+#         if image:
+#             if image.size > 4*1024*1024:
+#                 raise ValidationError("Фаіл занадто великий. Максимальний розмір 4 МБ.")
+#             return image
+#         else:
+#             raise ValidationError("Не вдалося завантажити зображення")
+#
+# #
+#
+# class PostForm(forms.ModelForm):
+#     class Meta:
+#         model = Post
+#         fields = ('autor', 'age', 'sex', 'image', 'title',
+#                   'place', 'description', 'phone', 'mail',)
+#
+#         widgets = {
+#             'autor': TextInput(attrs={
+#
+#                 'placeholder': 'Автор',
+#             }),
+#             'age': TextInput(attrs={
+#
+#                 'placeholder': 'Вік',
+#             }),
+#             'image': ImageField(attrs={
+#
+#                 'placeholder': 'Світлина',
+#             }),
+#             'title': TextInput(attrs={
+#
+#                 'placeholder': 'Заголовок',
+#             }),
+#             'description': Textarea(attrs={
+#
+#                 'placeholder': 'Опис',
+#             }),
+#             'phone': TextInput(attrs={
+#
+#                 'placeholder': 'Телефон',
+#             }),
+#             'mail': TextInput(attrs={
+#
+#                 'placeholder': 'Емайл',
+#             }),
+#
+#         }
 
 
 # class AddPostForm(forms.Form):
