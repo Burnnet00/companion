@@ -5,12 +5,19 @@
 {% block content %}
 
 <!--post container-->
-<div>
+{% if post.image %}
     <div class="image">
         <p align="center">
             <img src="{{ post.image.url }}" width="300px"/>
         </p>
     </div>
+{% else %}
+    <div class="image">
+        <p align="center">
+            <img src="{% static 'img/default.png' %}" width="300px"/>
+        </p>
+    </div>
+{% endif %}
 
     <div align="center">
         <span>{{post.title}}  {{post.autor}}  {{post.age}}</span>

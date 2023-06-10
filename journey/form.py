@@ -17,29 +17,6 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('autor', 'age', 'sex', 'image', 'title',
                   'place', 'description', 'phone', 'mail',)
-        widgets = {
-            'autor': forms.TextInput(attrs={
-                'placeholder': 'Автор',
-            }),
-            'age': forms.TextInput(attrs={
-                'placeholder': 'Вік',
-            }),
-            'image': forms.ClearableFileInput(attrs={
-                'placeholder': 'Світлина',
-            }),
-            'title': forms.TextInput(attrs={
-                'placeholder': 'Заголовок',
-            }),
-            'description': forms.Textarea(attrs={
-                'placeholder': 'Опис',
-            }),
-            'phone': forms.TextInput(attrs={
-                'placeholder': 'Телефон',
-            }),
-            'mail': forms.TextInput(attrs={
-                'placeholder': 'Емайл',
-            }),
-        }
 
 #     def clean_image(self):
 #         image = self.cleaned_data.get('image', False)
@@ -49,46 +26,7 @@ class PostForm(forms.ModelForm):
 #             return image
 #         else:
 #             raise ValidationError("Не вдалося завантажити зображення")
-#
-# #
-#
-# class PostForm(forms.ModelForm):
-#     class Meta:
-#         model = Post
-#         fields = ('autor', 'age', 'sex', 'image', 'title',
-#                   'place', 'description', 'phone', 'mail',)
-#
-#         widgets = {
-#             'autor': TextInput(attrs={
-#
-#                 'placeholder': 'Автор',
-#             }),
-#             'age': TextInput(attrs={
-#
-#                 'placeholder': 'Вік',
-#             }),
-#             'image': ImageField(attrs={
-#
-#                 'placeholder': 'Світлина',
-#             }),
-#             'title': TextInput(attrs={
-#
-#                 'placeholder': 'Заголовок',
-#             }),
-#             'description': Textarea(attrs={
-#
-#                 'placeholder': 'Опис',
-#             }),
-#             'phone': TextInput(attrs={
-#
-#                 'placeholder': 'Телефон',
-#             }),
-#             'mail': TextInput(attrs={
-#
-#                 'placeholder': 'Емайл',
-#             }),
-#
-#         }
+
 
 
 # class AddPostForm(forms.Form):
