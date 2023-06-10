@@ -47,10 +47,10 @@ class PostForm(forms.ModelForm):
 
                 'placeholder': 'Телефон',
             }),
-            # 'mail': EmailField(attrs={
-            #
-            #     'placeholder': 'Емайл',
-            # }),
+            'mail': TextInput(attrs={
+
+                'placeholder': 'Емайл',
+            }),
 
         }
 
