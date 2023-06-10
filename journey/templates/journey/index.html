@@ -1,46 +1,37 @@
 {% extends 'journey/base.html' %}
 {% load static %}
 
+
 {% block content %}
 
-<h1>Шукаю попутника</h1>
+<div class="form-register">
+    <a href="{% url 'addpost' %}">
+        <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Додати запис</button>
+    </a>
+</div>
 <!--main container-->
-<div class="wrapper">
-    <aside class="sidebar">
-        <div class="form-register">
-            <a href="{% url 'addpost' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Додати запис</button></li></a>
-        </div>
-
-    </aside>
-</div>
-{% for post in posts %}
-
-<div>
-    <aside>
-    <div>
+<div class="container">
+    <main class="main">
         <div>
-            <h2><span><a href="{{ post.id }}">{{ post.title }}</a> {{post.autor}} {{post.age}}</span></h2>
+            {% for post in posts %}
         </div>
-
-        <div class="image">
-            <span>
-                <img src="{{ post.image }}" width="200px"/>  {{post.description}}
-            </span>
-        </div>
-        <div>
-            <h4>Міце зустрічі: {{post.place}}</h4>
-        </div>
-    </div>
-
+    </main>
     <div>
-        <!--{{post.date}}-->
+        <aside class="aside">
+            <div>
+                <h2><span><a href="{{ post.id }}">{{ post.title }}</a> {{post.autor}} {{post.age}}</span></h2>
+            </div>
 
-        <!--<br>-->
-        <!--Тел: {{post.phone}}-->
-        <!--<br>-->
-        <!--Емайл: {{post.mail}}-->
+            <div class="image">
+                    <span>
+                        <img src="{{ post.image }}" width="200px"/>  {{post.description}}
+                    </span>
+            </div>
+            <div>
+                <h4>Міце зустрічі: {{post.place}}</h4>
+            </div>
+        </aside>
     </div>
-    </aside>
 </div>
-{% endfor %}
-{% endblock %}
+    {% endfor %}
+    {% endblock %}

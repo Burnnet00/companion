@@ -73,7 +73,7 @@ class Post(models.Model):
     autor = models.CharField('Автор: ', max_length=50)
     age = models.CharField('Вік: ', max_length=2)
     sex = models.CharField('Стать:', max_length=1, choices=GENDER_CHOICES)
-    image = models.ImageField('Світлина: ', upload_to='image/%Y', blank=True, null=True)
+    image = models.ImageField('Світлина: ', upload_to='image/%Y')#, blank=True, null=True)
     title = models.CharField('Заголовок: ', max_length=150)
     place = models.CharField('Місце подорожі: ', max_length=150, choices=COUNTRY_CHOICES, blank=True, null=True)
     description = models.TextField('Опис: ', max_length=2000)
