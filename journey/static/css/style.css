@@ -1,24 +1,32 @@
 
 body {
+
     margin: 0;
 }
+.navigation{
+    background-color: #E0EBFE;
+}
+
 .container {
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
     background-color: #ffffff;
     max-width: 100%;
 
 }
 .main {
+    display: flex;
+    background-color: #E0EBFE;
     width: 100%;
     min-height: 1px;
 }
 .aside {
+
     width: 100%;
     min-height: 1px;
 }
-
+.form-register{
+    border-radius: 15px;
+}
 .form-comment{
     font-size: 18px;
 }
