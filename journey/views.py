@@ -49,3 +49,6 @@ def add_post(request):
         'error': error
     }
     return render(request, 'journey/addpost.html', data)
+
+def about(request):
+    return render(request, 'journey/about.html')
