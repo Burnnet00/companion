@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Title</title>
+    <title>{% block title %}Title{% endblock %}</title>
 </head>
 <body>
     <div id="header">
+        <img class="myfoto" src="{% static '/img/1.png' %}" width="200px" height="70px" alt="My foto">
         <h1>Шукаю попутника</h1>
-        <img class="myfoto" src="static/img/1.png" width="200px" height="70px" alt="My foto">
     </div>
 
 
 
-    <div id="flex">
+    <div class="flex">
 
                 <div id="aside">
             <ul>
