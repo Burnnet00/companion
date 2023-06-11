@@ -2,16 +2,17 @@
     margin: 0;
     padding: 0;
 }
-
+#flex{
+    display: flex;
+}
 #header {
     width: 100%;
     height: 70px;
-    text-align: center;
     border-bottom: 4px solid silver;
     background: #333;
     color: #fff;
-    line-height: 50px;
-    margin-bottom: 40px; /*otstup*/
+    display: flex;
+    flex-direction: row-reverse
 }
 #footer{
     width: 100%;
@@ -29,7 +30,8 @@
     margin-left: 10%;
     background: #fafafa;
     border: 1px solid silver;
-    padding: 20px 2.5%;
+    padding: 20px;
+
 }
 #aside {
     width: 20%;
@@ -47,23 +49,6 @@ body{
 .navigation{
     background-color: #E0EBFE;
 }
-
-/*.container{
-    display: flex;
-    background-color: #ffffff;
-    max-width: 100%;*/
-
-}
-.main{
-    display: flex;
-    background-color: #E0EBFE;
-    width: 100%;
-    min-height: 1px;
-}
-.aside{
-
-    width: 100%;
-    min-height: 1px;
 }
 .form-register{
 
