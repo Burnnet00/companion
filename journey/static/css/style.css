@@ -4,7 +4,7 @@
 }
 .flex{
     display: flex;
-    padding: 20px;
+    flex-direction: column;
 }
 #header {
     width: 100%;
@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-#header .myfoto {
+#header .foto {
     width: 200px;
     height: 70px;
     margin-right: 20px;
@@ -35,11 +35,9 @@
 
 }
 #main{
-    width: 50%;
-    margin-left: 10%;
     background: #fafafa;
     border: 1px solid silver;
-    padding: 20px;
+
 
 }
 #aside {

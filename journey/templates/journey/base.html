@@ -9,48 +9,42 @@
     <title>{% block title %}Title{% endblock %}</title>
 </head>
 <body>
+<div>
     <div id="header">
-        <img class="myfoto" src="{% static '/img/1.png' %}" width="200px" height="70px" alt="My foto">
+        <img class="foto" src="{% static '/img/1.png' %}" width="200px" height="70px" alt="Foto">
         <h1>Шукаю попутника</h1>
     </div>
+        <div class="flex">
+            <div id="aside">
+                <ul>
+                    <li><a href="/" class="active">Головна</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="/admin/">Адмін панель</a></li>
+                    {% else %}
+                    <li><a href="/admin/logout/">Увійти</a></li>
+                    {% endif %}
 
+                </ul>
+                <div class="form-register">
+                    <a href="{% url 'addpost' %}">
+                        <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Додати запис</button>
+                    </a>
+                </div>
+            </div>
 
+            <div>
+            {% block content %}
 
-    <div class="flex">
-
-                <div id="aside">
-            <ul>
-                <li><a href="/" class="active">Головна</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="/admin/">Адмін панель</a></li>
-                {% else %}
-                <li><a href="/admin/logout/">Увійти</a></li>
-                {% endif %}
-
-            </ul>
-            <div class="form-register">
-                <a href="{% url 'addpost' %}">
-                    <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Додати запис</button>
-                </a>
+            {% endblock %}
             </div>
         </div>
-    </div>
-        <div>
-        {% block content %}
-        <div id="main">
-
-        <div>
-        {% endblock %}
-        </div>
 
 
-
-
-
-    <div id="footer">
+</div>
+<div id="footer">
         <p>
             <span>#Шукаю попутника #Ищу попутчика</span>
         </p>
-    </div>
+</div>
 </body>
 </html>
