@@ -29,7 +29,6 @@ aside{
     background: #2c2c2c;
     width: 22%;
     padding: 2.5%;
-    /*height: 90hv;*/
     color: #fff;
     border-right: 1px solid silver;
 }
@@ -43,7 +42,7 @@ footer{
     justify-content: center;
     align-items: center;
 }
-main .features {
+/*main .features {
     float: left;
     color: #fff;
     margin-top: 100px;
@@ -51,7 +50,7 @@ main .features {
     width: 75%
 }
 main .features h1 {font-size: 50px;}
-main .features p {max-width: 400px; margin:20px auto}
+main .features p {max-width: 400px; margin:20px auto}*/
 
 .navi{
     background-color: #E0EBFE;
