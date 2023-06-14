@@ -2,26 +2,9 @@
     margin: 0;
     padding: 0;
 }
-aside{
-    float: left;
-    /*position: fixed; /* изменяем позиционирование */
-    position: -webkit-sticky; /* для Safari и iOS */
-    position: sticky;
-    top: 0; /* прикрепляем к верху экрана */
-    background: #2c2c2c;
-    width: 22%;
-    padding: 2.5%;
-    height: 90hv;
-    color: #fff;
-    border-right: 1px solid silver;
+.flex{
+    display: flex;
 }
-/*#aside {
-    width: 20%;
-    height: 100%;
-    padding: 20px 2.5%;
-    background: #fafafa;
-    border: 1px solid silver;
-}*/
 header {
     width: 100%;
     height: 70px;
@@ -37,7 +20,19 @@ header {
     height: 70px;
     margin-right: 20px;
 }
-
+aside{
+/*    float: left;
+    *//*position: fixed; *//* изменяем позиционирование *//*
+    position: -webkit-sticky; *//* для Safari и iOS *//*
+    position: sticky;*/
+    /*top: 0; *//* прикрепляем к верху экрана */
+    background: #2c2c2c;
+    width: 22%;
+    padding: 2.5%;
+    /*height: 90hv;*/
+    color: #fff;
+    border-right: 1px solid silver;
+}
 footer{
     width: 100%;
     height: 50px;
@@ -47,17 +42,7 @@ footer{
     color: #fff;
     justify-content: center;
     align-items: center;
-
-    /*line-height: 50px;
-    margin-bottom: 0px;
-    */
 }
-/*main{
-    background: #fafafa;
-    border: 1px solid silver;
-    padding 20px;
-
-}*/
 main .features {
     float: left;
     color: #fff;
@@ -70,7 +55,6 @@ main .features p {max-width: 400px; margin:20px auto}
 
 .navi{
     background-color: #E0EBFE;
-}
 }
 .form-register{
 
@@ -87,7 +71,6 @@ main .features p {max-width: 400px; margin:20px auto}
     height: 50px;
     width: 250px;
 }
-
 .form-comment textarea{
     border-radius: 15px;
     padding: 15px;

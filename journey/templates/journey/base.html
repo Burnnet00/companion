@@ -14,7 +14,7 @@
         <img class="foto" src="{% static '/img/1.png' %}" width="200px" height="70px" alt="Foto">
         <h1>Шукаю попутника</h1>
     </header>
-
+<div class="flex">
     <aside>
         <ul>
             <li><a href="/" class="active">Головна</a></li>
@@ -26,22 +26,21 @@
         </ul>
 
             <a href="{% url 'addpost' %}">
-                <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Додати запис</button>
+                <button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Додати запис</button>
             </a>
 
     </aside>
 
     <main>
     {% block content %}
-
     {% endblock %}
     </main>
-<giv>
+</div>
+
     <footer>
         <p>
             <span>#Шукаю попутника #Ищу попутчика</span>
         </p>
     </footer>
-</giv>
 </body>
 </html>
