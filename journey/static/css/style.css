@@ -9,24 +9,19 @@ header {
     width: 100%;
     height: 70px;
     border-bottom: 4px solid silver;
-    background: #333;
+    background:  #2c2c2c;
     color: #fff;
-    /*justify-content: center;
-    align-items: center;*/
 }
-
-#header .foto {
+.sort{
+    padding: 20 0 20 10px;
+}
+/*#header .foto {
     width: 200px;
     height: 70px;
     margin-right: 20px;
-}
+}*/
 aside{
-/*    float: left;
-    *//*position: fixed; *//* изменяем позиционирование *//*
-    position: -webkit-sticky; *//* для Safari и iOS *//*
-    position: sticky;*/
-    /*top: 0; *//* прикрепляем к верху экрана */
-    background: #2c2c2c;
+    background: #333;
     width: 22%;
     padding: 2.5%;
     color: #fff;
@@ -34,11 +29,7 @@ aside{
 }
 main{
     padding: 70px;
-
-/*    text-align: center;
-    width: 75%*/
 }
-
 footer{
     width: 100%;
     height: 50px;
@@ -52,8 +43,10 @@ footer{
 .navi{
     background-color: #E0EBFE;
 }
-.form-register{
-
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 .form-comment{
     font-size: 18px;

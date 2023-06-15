@@ -12,9 +12,11 @@ class PostView(View):
             if sort == 'date':
                 posts = Post.objects.order_by('-date')
             elif sort == 'sex-M':
-                posts = Post.objects.filter(sex='M')
+                posts = Post.objects.filter(sex='M').order_by('-date')
+
             else:
-                posts = Post.objects.filter(sex='F')
+                posts = Post.objects.filter(sex='F').order_by('-date')
+
         else:
             posts = Post.objects.order_by('-date')
 
