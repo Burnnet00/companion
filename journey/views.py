@@ -11,12 +11,28 @@ class PostView(View):
         if sort:
             if sort == 'date':
                 posts = Post.objects.order_by('-date')
+            elif sort == 'sex-M':
+                posts = Post.objects.filter(sex='M')
             else:
-                posts = Post.objects.order_by(sort)
+                posts = Post.objects.filter(sex='F')
         else:
-            posts = Post.objects.order_by('-date') # сортування за замовчуванням
+            posts = Post.objects.order_by('-date')
 
         return render(request, 'journey/index.html', {'posts': posts})
+
+
+# class PostView(View):
+    # def get(self, request):
+    #     sort = request.GET.get('sort')
+    #     if sort:
+    #         if sort == 'date':
+    #             posts = Post.objects.order_by('-date')
+    #         else:
+    #             posts = Post.objects.order_by(sort)
+    #     else:
+    #         posts = Post.objects.order_by('-date') # сортування за замовчуванням
+    #
+    #     return render(request, 'journey/index.html', {'posts': posts})
 
 
 router = routers.DefaultRouter()

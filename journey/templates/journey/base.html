@@ -28,23 +28,27 @@
             <a href="{% url 'addpost' %}">
                 <button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Додати запис</button>
             </a>
-        <br>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th><a href="?sort=date">Дата публікації</a></th>
-                        </tr>
+        <div>
+    <form>
+      <label>
+        <input type="radio" name="sort" value="date" checked>
+        Сортувати за датою
+      </label>
+      <label>
+        <input type="radio" name="sort" value="sex-M">
+        Показати чоловіків
+      </label>
+      <label>
+        <input type="radio" name="sort" value="sex-F">
+        Показати жінок
+      </label>
+      <button type="submit">Сортувати</button>
+    </form>
+</div>
 
-                        <tr>
-                            <th><a href="?sort=sex">Стать</a></th>
-                        </tr>
-                        <tr>
-                            <th><a href="?sort=place">Місце подорожі</a></th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
+
+
+
     </aside>
 
     <main>
