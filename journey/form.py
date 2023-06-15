@@ -1,4 +1,4 @@
-from django.forms import TextInput, ImageField, Textarea, EmailField
+from django.forms import TextInput, ImageField, Textarea, EmailField, NumberInput, ClearableFileInput
 from .models import Post, Comments
 from django import forms
 from .models import GENDER_CHOICES, COUNTRY_CHOICES
@@ -18,24 +18,22 @@ class PostForm(forms.ModelForm):
         fields = ('autor', 'age', 'sex', 'image', 'title',
                   'place', 'description', 'phone', 'mail',)
 
-#     def clean_image(self):
-#         image = self.cleaned_data.get('image', False)
-#         if image:
-#             if image.size > 4*1024*1024:
-#                 raise ValidationError("Фаіл занадто великий. Максимальний розмір 4 МБ.")
-#             return image
-#         else:
-#             raise ValidationError("Не вдалося завантажити зображення")
+        widgets = {'autor': TextInput(attrs={"class": "form-control", "placeholder": "Введіть ім`я"}),
+                   'age': TextInput(attrs={"class": "form-control", "placeholder": "Введіть ваш вік"}),
+                   # 'sex': TextInput(attrs={"class": "form-control", "placeholder": "Введіть стать"}),
+                   'image': ClearableFileInput(attrs={"class": "form-control", "placeholder": "Світлина"}),
+                   'title': TextInput(attrs={"class": "form-control", "placeholder": "Введіть заголовок"}),
+                   # 'place': TextInput(attrs={"class": "form-control", "placeholder": "Введіть місце зустрічі"}),
+                   'description': Textarea(attrs={"class": "form-control", "placeholder": "Введіть деталі подорожі"}),
+                   'phone': NumberInput(attrs={"class": "form-control", "placeholder": "Введіть свій телефон"}),
+                   'mail': TextInput(attrs={"class": "form-control", "placeholder": " Введіть свій емаіл"}),
+                   }
 
-
-
-# class AddPostForm(forms.Form):
-#     autor = forms.CharField(label='Імя', max_length=200,)# required=False, widget=forms.TextInput(attrs={'class': 'css_input'}))#добавимо необовязкове поле, виджет створеного цсс
-#     age = forms.CharField(label='Вік', max_length=200)
-#     sex = forms.CharField(label='Стать', max_length=200)
-#     image = forms.CharField(label='Світлина', max_length=200, required=False)
-#     title = forms.CharField(label='Заголовок', max_length=200,)
-#     place = forms.CharField(label='Місце подорожі', max_length=200)
-#     description = forms.CharField(label='Опис', max_length=20000)
-#     phone = forms.CharField(label='Телефон', max_length=15)
-#     mail = forms.CharField(label='Емайл', max_length=50)
+    def clean_image(self):
+        image = self.cleaned_data.get('image', False)
+        if image:
+            if image.size > 4*1024*1024:
+                raise ValidationError("Файл занадто великий. Максимальний розмір 4 МБ.")
+            return image
+        else:
+            raise ValidationError("Не вдалося завантажити зображення")
