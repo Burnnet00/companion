@@ -28,7 +28,23 @@
             <a href="{% url 'addpost' %}">
                 <button class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Додати запис</button>
             </a>
+        <br>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><a href="?sort=date">Дата публікації</a></th>
+                        </tr>
 
+                        <tr>
+                            <th><a href="?sort=sex">Стать</a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="?sort=place">Місце подорожі</a></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
     </aside>
 
     <main>

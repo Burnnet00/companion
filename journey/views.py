@@ -5,12 +5,19 @@ from rest_framework import routers
 from .api import PostViewset
 from .form import PostForm, CommentsForm
 
-
 class PostView(View):
-
     def get(self, request):
-        posts = Post.objects.all()
+        sort = request.GET.get('sort')
+        if sort:
+            if sort == 'date':
+                posts = Post.objects.order_by('-date')
+            else:
+                posts = Post.objects.order_by(sort)
+        else:
+            posts = Post.objects.order_by('-date') # сортування за замовчуванням
+
         return render(request, 'journey/index.html', {'posts': posts})
+
 
 router = routers.DefaultRouter()
 router.register('api/journey', PostViewset, 'journey')
