@@ -8,7 +8,6 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links = ('id','autor', 'title')
     search_fields = ('sex', 'place',)
     list_filter = ('sex', 'place',)
-    # list_editable = ('',)
 
 @admin.register(Comments)
 class CommentsAdmin(admin.ModelAdmin):

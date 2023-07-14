@@ -15,11 +15,13 @@ header {
 .sort{
     padding: 20 0 20 10px;
 }
-/*#header .foto {
-    width: 200px;
-    height: 70px;
-    margin-right: 20px;
-}*/
+.description{
+    border-radius: 15px;
+    padding: 15px;
+    height: 150px;
+    width: 70%;
+    resize: vertical;
+}
 aside{
     background: #333;
     width: 22%;
